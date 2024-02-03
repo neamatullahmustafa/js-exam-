@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-black  text-white">
+    <header class="mt-5">
+        <form class="d-flex ">
+            <input class="form-control m-auto w-50 " id="search" name="search" type="search" placeholder="Search">
+            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+        </form>
+    </header>
+    <aside class="position-fixed  top-0 start-0 bottom-0 d-flex ">
+        <nav class="nav p-3 flex-column  justify-content-between  position-relative ">
+            <div id="navLink"> <a class="nav-link active" aria-current="page" href="#">Naw Playing</a>
+                <a class="nav-link" href="#">Popular</a>
+                <a class="nav-link" href="#">Top Rated</a>
+                <a class="nav-link" href="#">Trending</a>
+                <a class="nav-link" href="#">Upcoming</a>
+                <a class="nav-link" href="#Contact">Contact Us</a>
+            </div>
+            <div>
+                <div>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <p class="p-2 text-muted ">Copyright © 2024 All Rights
+                    Reserved.</p>
+            </div>
+        </nav>
+        <aside class="bg-light py-3 d-flex flex-column position-relative align-items-center justify-content-between  ">
+            <div><img src="./images/logo.png" alt="logo"></div>
+            <div>
+                <i id="closeNavbar" class="fa-solid fa-xmark d-none"></i>
+                <i id="openNavbar" class="fa-solid fa-bars"></i>
+            </div>
+            <div> <i class="fa-solid fa-share-nodes"></i>
+                <i class="fa-solid fa-globe"></i>
+            </div>
+        </aside>
+    </aside>
+    <main class="position-relative ">
+        <div class="loader">
+            <div id="loader">
+                <div class="spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <section class="container mt-5 row row-cols-xl-3 row-cols-md-2 mx-auto flex-wrap" id="moviesContainer">
+        </section>
+    </main>
+    <footer id="Contact" class="container">
+        <h2>Contact US</h2>
+        <form action="" method="post" class="row row-cols-md-2 flex-wrap">
+            <div><input type="text" name="name" placeholder="Name">
+                <p class="text-danger"></p>
+            </div>
+            <div><input type="email" name="email" placeholder="Email Address">
+                <p class="text-danger"></p>
+            </div>
+            <div><input type="tel" name="phone" placeholder="Phone">
+                <p class="text-danger"></p>
+            </div>
+            <div><input type="number" name="age" placeholder="Age">
+                <p class="text-danger"></p>
+            </div>
+            <div><input type="password" name="password" placeholder="Password">
+                <p class="text-danger"></p>
+            </div>
+            <div><input type="password" name="rePassword" placeholder="Re Password">
+                <p class="text-danger"></p>
+            </div>
+            <input type="submit" class="btn">
+
+        </form>
+    </footer>
+    <!-- <script src="./js/jquery-ui.min.js"></script> -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>
