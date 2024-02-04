@@ -138,22 +138,22 @@ aside aside img {
 }
 
 /* main */
-main {
+main ,footer{
+    z-index: 2;
     margin-left: 60px !important;
 }
-.row>*{padding: 0;}
+/* .row>*{padding: 0;} */
 /* movies */
 figure {
     position: relative;
-    background-color: #b02a37;
     border-radius: 10px;
     overflow: hidden;
     padding: 10px;
 }
-/* figure img{
-        border-radius: 10%;
-
-} */
+figure img{
+        border-radius: 10px;
+        overflow: hidden;
+}
 
 figcaption {
     position: absolute;
@@ -217,15 +217,15 @@ footer input {
 }
 
 .btn {
+    transition: 0.3s;
+    position: relative;
     width: 100px;
     margin: 30px;
     background-color: rgb(14, 14, 14);
     color: white;
+    outline: none;
 }
 
-footer {
-    margin-left: 60px;
-}
 
 footer input:focus {
     outline: none;
@@ -234,7 +234,12 @@ footer input:focus {
 footer input::placeholder {
     text-align: center;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-input:-internal-autofill-selected {
-    background-color: black;
+input[type=number] {
+  -moz-appearance: textfield;
 }
