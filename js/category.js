@@ -15,7 +15,9 @@ export class Category {
       .catch((err) => console.error(err));
   }
   load() {
-    $("#loader").css({ display: `none` }, 1000);
+  $("#loader").css({ display: `none` })
+  $("#Contact").css({ display: `block` })
+
   }
   displayCategory(movies) {
     let moviesContainer = $("#moviesContainer");
@@ -48,8 +50,11 @@ export class Category {
         )
       );
     }
-    this.load();
     this.name();
+    setTimeout(() => {
+      this.load();
+    }, 1000);
+    
   }
   name() {
     $("figure").hover(

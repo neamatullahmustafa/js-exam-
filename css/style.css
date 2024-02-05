@@ -201,6 +201,7 @@ figcaption p {
 i.fa-star {
     color: gold;
 }
+#Contact{display: none;}
 
 footer input {
     background-color: black;

@@ -2,6 +2,7 @@
 import { Category } from "./category.js";
 // $(function(){alert("hiii")})
 $("aside").css("z-index",0);
+const category = new Category("movie/now_playing?");
 let element = [],
   search = $("#search");
 for (let j = 0; j < 6; j++) {
@@ -106,6 +107,5 @@ search.change(function (e) {
   console.log(e.target.value);
   const category = new Category(`search/movie?query=${e.target.value}&`);
 });
-const category = new Category("movie/now_playing?");
 
 
