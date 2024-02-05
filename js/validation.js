@@ -1,8 +1,8 @@
 let regexName = /^[A-Z]{3,55}$/i,
-  regexEmail = /^([A-Z]{3,9}@gmail.com)$/,
+  regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
   regexPhone = /^(01[0-9]{9})$/d,
   regexAge = /^([0-9]{1,2})$/d,
-  regexPass = /^(\w| ){8,10}$/,
+  regexPass = /^[A-Za-z]\w{7,14}$/,
   regexRePass,
   contactInput = [];
 function validation() {
@@ -38,13 +38,13 @@ function validation() {
     );
     regexRePass = e.value;
   });
-  contactInput[4].change(function (e) {
+  contactInput[5].change(function (e) {
     e.preventDefault();
     if (e.value != regexRePass) {
-      element.style.border = "solid red 1px";
-      element.after(error);
+      e.target.style.border = "solid red 1px";
+      e.target.after(error);
     } else {
-      element.style.border = "solid green 1px";
+      e.target.style.border = "solid green 1px";
     }
   });
 }
@@ -52,8 +52,8 @@ function chickError(regex, error, element) {
   if (!regex.test(element.value)) {
     element.style.border = "solid red 1px";
     element.nextElementSibling.innerHTML = error;
-    $(".btn")
-      .hover(
+    $(".btn").addClass("bg-danger")
+      $(".btn.bg-danger").hover(
         function () {
           if ($(this).css("left") == "0px") {
             $(".btn").css({ left: "300px" }, 1000);
@@ -63,12 +63,16 @@ function chickError(regex, error, element) {
         },
         function () {}
       )
-      .addClass("bg-danger");
+    
   } else {
+
+    $(".btn").removeClass("bg-danger");
     $(".btn").hover(
-    this.preventDefault()
-    ).removeClass("bg-danger");
-    $(".btn").css({ left: "0px" }, 1000);
+      function () {
+          $(".btn").css({ left: "0px" }, 1000); 
+      },
+      function () {}
+    )
     element.style.border = "solid green 1px";
     element.nextElementSibling.innerHTML = "";
   }
