@@ -1,8 +1,8 @@
 let regexName = /^[A-Z]{3,55}$/i,
   regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
   regexPhone = /^(01[0-9]{9})$/d,
-  regexAge = /^([0-9]{1,2})$/d,
-  regexPass = /^[A-Za-z]\w{7,14}$/,
+  regexAge = /^([1-9]{1,2})$/d,
+  regexPass = /^[A-Za-z0-9]{8,}$/,
   regexRePass,
   contactInput = [];
 function validation() {
@@ -27,13 +27,18 @@ function validation() {
   });
   contactInput[3].change(function (e) {
     e.preventDefault();
-    chickError(regexAge, `Please enter a valid age`, e.target);
+    if(e.target.value <18 )
+  {  e.target.value ="";
+    chickError(regexAge, `Please enter a age (+18)`,   e.target);
+   } else
+    chickError(regexAge, `Please enter a valid age `, e.target);
+
   });
   contactInput[4].change(function (e) {
     e.preventDefault();
     chickError(
       regexPass,
-      `Please enter a pass between 8 and 9 characters`,
+      `Please enter a pass at least 8 characters & num`,
       e.target
     );
     regexRePass = e.value;
